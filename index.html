@@ -95,12 +95,26 @@ p {
       100% { transform: translate(0, 0); }
     }
 
-    .title-group img:hover,
-    .title-eng img:hover, 
-    .preface-deco:hover {
-      animation: wiggle 0.5s ease-in-out infinite;
+    @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
     }
 
+    .title-group img:hover,
+    .title-eng img:hover, 
+    .preface-deco:hover,
+    .team1-name:hover,
+    .team1-title:hover,
+    .team2-name:hover,
+    .team2-title:hover
+    {
+      animation: wiggle 0.5s ease-in-out infinite;
+    }
+    
+    .team1-graphic:hover,
+    .team2-graphic:hover{
+  animation: spin 8s linear;
+    }
 .preface-section {
   margin-bottom: 150px;
   width: 100%;
