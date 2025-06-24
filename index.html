@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>얼렁뚱땅</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-size: 22px;
+      line-height: 1.8;
+      font-family: sans-serif;
+      background: #fff;
+    }
+
+
+p {
+    margin-bottom: 60px;
+}
+
+    .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px 20px 30px;
+    z-index: 100;
+    position: fixed; /* 상단 고정 */
+    width: 100%;
+    backdrop-filter: blur(10px); /* 블러 효과 */
+    background-color: rgba(255, 255, 255, 0.6); /* 반투명 배경 */
+    border-bottom: 1px solid #0000001d;
+    box-sizing: border-box;
+    }
+
+
+    .logo {
+      height: 24px;
+    }
+
+    .main {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .yellow-bg {
+      width: 100%;
+      height: auto;
+      display: block;
+      position: relative;
+      z-index: 0;
+    }
+
+    .title-group {
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      gap: 10px;
+      z-index: 1;
+    }
+
+    .title-group img {
+      height: 200px;
+    }
+
+    .title-eng {
+      position: absolute;
+      bottom: 12%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+
+    .title-eng img {
+      height: 60px;
+      display: block;
+    }
+
+    .title-section {
+            margin-bottom: 150px;
+        padding-top: 120px;
+        height: 100vh;
+    }
+
+    @keyframes wiggle {
+      0%   { transform: translate(0, 0); }
+      15%  { transform: translate(-6px, -6px); }
+      30%  { transform: translate(6px, 6px); }
+      45%  { transform: translate(-7px, 5px); }
+      60%  { transform: translate(7px, -5px); }
+      75%  { transform: translate(-5px, 7px); }
+      90%  { transform: translate(5px, -7px); }
+      100% { transform: translate(0, 0); }
+    }
+
+    .title-group img:hover,
+    .title-eng img:hover, 
+    .preface-deco:hover {
+      animation: wiggle 0.5s ease-in-out infinite;
+    }
+
+.preface-section {
+  margin-bottom: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.preface-inner {
+  position: relative;
+  width: 1500px; /* ✅ 실제 이미지 너비 */
+  display: block;
+}
+
+.preface-bg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.preface-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  color: white;
+  font-size: 20px;
+  line-height: 1.8;
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+
+/* 기존 preface-text-black 분리 */
+.preface-text-top {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  line-height: 1.8;
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+}
+
+.preface-text-bottom {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  line-height: 1.8;
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+}
+
+.preface-deco {
+  position: absolute;
+  z-index: 2;
+  width: 240px; /* 적절한 크기로 조정 */
+}
+
+.deco1 {
+  top: -100px;
+  right: -60px;
+}
+
+.deco2 {
+  bottom: -120px;
+  left: -20px;
+}
+/* 1팀 전체 섹션 배경 및 정렬 */
+.team1-section {
+  background-color: #FFF600;
+  width: 100%;
+  padding: 100px 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* 내부 최대 너비 1200px */
+.team1-inner {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* 상단 '1팀' 텍스트 이미지 */
+.team1-name {
+  width: 200px;
+  margin-bottom: 40px;
+}
+
+/* 중간 큰 사진 */
+.team1-image {
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+/* '원판' 텍스트 이미지 */
+.team1-title {
+  width: 180px;
+  margin-bottom: 40px;
+}
+
+/* 그래픽 + 설명 텍스트 나란히 */
+.team1-row {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+  margin-bottom: 60px;
+}
+
+/* 좌측 원형 그래픽 이미지 */
+.team1-graphic {
+  width: 240px;
+  flex-shrink: 0;
+}
+
+/* 설명 텍스트 */
+.team-desc {
+  flex: 1;
+  color: #000;
+}
+
+/* 화살표를 오른쪽 정렬 */
+.team1-arrow-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* 화살표 이미지 */
+.team1-arrow {
+  width: 300px;
+  margin-top: 20px;
+}
+.team1-arrow {
+  width: 300px;
+  height: 100px;
+  margin-top: 20px;
+  background-image: url('asset/arrow.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background-image 0.3s ease;
+  cursor: pointer;
+}
+
+.team1-arrow:hover {
+  background-image: url('asset/arrow-team1-hover.png');
+}
+
+.team2-section {
+  background-color: #0028ff;
+  width: 100%;
+  padding: 100px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.team2-inner {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.team2-name {
+  width: 200px;
+  margin-bottom: 40px;
+}
+
+.team2-image {
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+.team2-title {
+  width: 180px;
+  margin-bottom: 40px;
+}
+
+.team2-row {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+  margin-bottom: 60px;
+}
+
+.team2-graphic {
+  width: 180px;
+  flex-shrink: 0;
+}
+
+.team2-desc {
+  flex: 1;
+  color: #fff000;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #fff;
+}
+
+.team2-arrow-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.team2-arrow {
+  width: 300px;
+  height: 100px;
+  margin-top: 20px;
+  background-image: url('asset/arrow.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background-image 0.3s ease;
+  cursor: pointer;
+}
+
+.team2-arrow:hover {
+  background-image: url('asset/arrow-team2-hover.png');
+}
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="asset/logo.png" class="logo" alt="로고">
+    <a href="#" style="color: #0028ff; font-weight: bold;">About</a>
+  </div>    
+<div class="title-section">
+    <div class="main">
+        <img src="asset/title-yellow-circle.png" class="yellow-bg" alt="노란 배경">
+
+        <div class="title-group">
+        <img src="asset/title-a.png" alt="얼">
+        <img src="asset/title-b.png" alt="렁">
+        <img src="asset/title-c.png" alt="뚱">
+        <img src="asset/title-d.png" alt="땅">
+        </div>
+
+        <div class="title-eng">
+        <img src="asset/title-eng.png" alt="haphazardly" class="eng-title">
+        </div>
+    </div>
+  </div>
+<div class="preface-section">
+  <div class="preface-inner">
+    <img src="asset/preface-blue-circle.png" class="preface-bg" alt="배경">
+    <div class="preface-text">
+        <img src="asset/preface-team1.png" class="preface-deco deco1" alt="팀1">
+        <img src="asset/preface-team2.png" class="preface-deco deco2" alt="팀2">
+        <p>
+        전시는 얼렁뚱땅이라는 단어에서 출발한다.<br>
+        얼렁뚱땅은 일반적으로 즉흥적이거나 성의 없어 보이는 태도를 의미하지만,<br>
+        학생이자 아마추어인 우리가 겪을 수밖에 없는<br>
+        ‘얼렁뚱땅’스러운 불완전성 속엔 되려 우리의 개성을 마주할 기회가 담겨있기도 하다.</p>
+        <p>
+        이번 전시는 그러한 ‘얼렁뚱땅함’을 작업의 일부로 받아들이며,<br>
+        과정 속의 불확실성과 유동성을 드러내고자 한다.<br>
+        참여한 두 팀 모두 과정에서의 움직임에 주목하며,<br>
+        서툴고 불안정한 상태에서 출발해 각자의 방식으로 주제를 확장한다.
+        </p>
+
+    </div>
+  </div>
+</div>
+<div class="preface-section">
+  <div class="preface-inner">
+    <img src="asset/s.png" class="preface-bg" alt="배경">
+
+    <!-- 위쪽 정렬된 문단 -->
+    <div class="preface-text-top">
+      <p>
+        1팀은 ‘코리올리 힘’ 개념을 출발점 삼아 가족 관계의 복잡성과 그 안에서<br>
+        발생하는 감정의 흐름을 다루며, 2팀은 정치 성향이 다른 커플의 일상을 다룬<br>
+        페이크 다큐 작업을 통해 사회적 관점과 개인적 친밀감 사이의 간극을 탐색한다.
+      </p>
+       <p>
+        작업 방식과 내용은 다르지만, 두 팀 모두 확정되지 않은 상태에서 시도하고 구성하며<br>
+        결정해 나가는 일련의 태도를 공유하고 있다. 이는 ‘얼렁뚱땅’이라는 단어가 내포하는<br>
+        미완의 성격, 즉흥성과 조심스러운 실험을 반영한 결과다.
+      </p>
+    </div>
+
+    <!-- 아래쪽 정렬된 문단 -->
+    <div class="preface-text-bottom">
+      <p>
+        본 전시는 명확한 주제나 화려한 결론을 제시하지 않는다.<br>
+        대신 작업자들의 일관되지 않은 시선과 감정, 시도를 있는<br>
+        그대로 제시하며 관람자로 하여금 불완전한 질문들과 가공되지<br>
+        않은 태도 자체를 마주하게 만든다.
+        </p>
+    </div>
+
+  </div>
+</div>
+<div class="team1-section team1-bg">
+  <div class="team1-inner">
+
+    <img src="asset/contents-team1-name.png" class="team1-name" alt="1팀">
+    <img src="asset/img-team1.png" class="team1-image" alt="1팀 이미지">
+    <img src="asset/contents-team1-title.png" class="team1-title" alt="원판">
+
+    <div class="team1-row">
+      <img src="asset/contents-team1-graphic.png" class="team1-graphic" alt="그래픽">
+      <div class="team1-desc">
+        <p>
+          우리는 자신을 완전한 개별자라고 생각하고 내가 느끼는 감정, 내가 건네는 말,<br>
+          내가 지닌 나라는 존재는 곧고 정확하게 닿을 수 있으리라 믿는다. 그러나 세계는<br>
+          회전한다. 우리가 서 있는 곳은 거대한 회전 원판. 그래서 우리는 같은 공간에<br>
+          존재하면서도 말은 비껴가고, 표정은 오해되고, 사랑은 엇나간다. 나의 감정과<br>
+          의도는 기대와는 다른 곡선을 그리며, 나의 말은 너에게 닿기 전에 휘어진다.
+        </p>
+      </div>
+    </div>
+
+    <div class="team1-arrow-wrapper">
+        <div class="team1-arrow" role="button"></div>
+    </div>
+
+  </div>
+</div>
+<div class="team2-section">
+  <div class="team2-inner">
+
+    <img src="asset/contents-team2-name.png" class="team2-name" alt="2팀">
+    <img src="asset/img-team2.png" class="team2-image" alt="2팀 이미지">
+    <img src="asset/contents-team2-title.png" class="team2-title" alt="이불 離不">
+
+    <div class="team2-row">
+      <img src="asset/contents-team2-graphic.png" class="team2-graphic" alt="세탁 그래픽">
+      <div class="team2-desc">
+        <p>
+          세탁이 끝나기를 기다리는 평범한 새벽, 젊은 연인이 빨래처럼 일상 속에 스며든<br>
+          대화를 주고받는다. 사랑은 특별할 것 없는 순간들 속에서 자라나기도 하고,<br>
+          또 스르르 어긋나기도 한다. 좋아해서 시작된 관계지만, 나와 네가 사람을 바라보는<br>
+          방식이 다르다면 우리네 연애는 지속될 수 있을까?
+        </p>
+      </div>
+    </div>
+
+    <div class="team2-arrow-wrapper">
+      <div class="team2-arrow" role="button"></div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
