@@ -2,6 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>얼렁뚱땅</title>
   <style>
     html, body {
@@ -347,6 +348,123 @@ p {
 
 .team2-arrow:hover {
   background-image: url('asset/arrow-team2-hover.png');
+}
+
+@media (max-width: 768px) {
+  html, body {
+    font-size: 16px;
+    width: 100vw;  
+     overflow-x: hidden;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+
+  .header {
+    flex-direction: row;
+    justify-content: space-between; /* About 오른쪽 정렬 유지 */
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+  .logo {
+    height: 20px;
+  }
+
+  #about-link {
+    font-size: 14px;
+  }
+  .title-section {
+    height: auto; /* ✅ 고정 높이 해제 */
+    margin-bottom: 100px; /* ✅ 아래 마진 제거 */
+    padding-top: 100px; /* 필요 시 줄이기 */
+  }
+
+  .title-group {
+    gap: 6px;
+  }
+
+  .title-group img {
+    height: 80px; /* 얼렁뚱땅 줄이기 */
+  }
+
+  .title-eng img {
+    height: 30px;
+  }
+
+.preface-section {
+    padding: 0 20px;
+    box-sizing: border-box;   /* ✅ 패딩 포함 너비 계산 */
+    position: relative;
+  }
+
+  .preface-inner {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .preface-text,
+  .preface-text-top,
+  .preface-text-bottom {
+    font-size: 14px;
+    max-width: 100%;
+    text-align: left;
+    line-height: 1.7;
+  }
+.preface-deco {
+    display: none !important;
+  }
+
+  br {
+    display: none !important;
+  }
+
+  .team1-inner,
+  .team2-inner {
+    padding: 0 20px;
+  }
+.preface-bg {
+    width: 200vw;     /* ✅ 100vw보다 더 크게 확장 */
+    height: auto;
+    display: block;
+    position: relative;
+    left: -50vw;      /* ✅ 중앙 정렬 효과 (150 - 100) / 2 */
+  }
+  .team1-row,
+  .team2-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .team1-graphic,
+  .team2-graphic {
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  .team-desc,
+  .team2-desc {
+    font-size: 14px;
+    text-align: left;
+  }
+
+  .team1-arrow,
+  .team2-arrow {
+    width: 180px;
+    height: 60px;
+  }
+
+  .team1-name,
+  .team1-title,
+  .team2-name,
+  .team2-title {
+    width: 140px;
+  }
+
+  .team1-image,
+  .team2-image {
+    margin-bottom: 30px;
+  }
 }
   </style>
 </head>
