@@ -65,7 +65,25 @@ p {
     .title-group img {
       height: 200px;
     }
+/* 얼 - 왼쪽으로 살짝 기울고 내려감 */
+.title-a {
+  transform: rotate(4deg) translateY(10px);
+}
 
+/* 렁 - 오른쪽으로 기울고 살짝 내려감 */
+.title-b {
+  transform: rotate(-4deg) translateY(-18px);
+}
+
+.title-c {
+  transform: rotate(-0deg) translateY(-0px);
+}
+
+
+/* 땅 - 왼쪽으로 약간 기울고 아주 살짝 올라감 */
+.title-d {
+  transform: rotate(10deg) translateY(-4px) scale(1.15);
+}
     .title-eng {
       position: absolute;
       bottom: 12%;
@@ -478,11 +496,13 @@ p {
     <div class="main">
         <img src="asset/title-yellow-circle.png" class="yellow-bg" alt="노란 배경">
 
-        <div class="title-group">
-        <img src="asset/title-a.png" alt="얼">
-        <img src="asset/title-b.png" alt="렁">
-        <img src="asset/title-c.png" alt="뚱">
-        <img src="asset/title-d.png" alt="땅">
+          <div class="title-group">
+            <img src="asset/title-a.png" class="title-img title-a" alt="얼">
+            <img src="asset/title-b.png" class="title-img title-b" alt="렁">
+            <img src="asset/title-c.png" class="title-img title-c" alt="뚱">
+            <img src="asset/title-d.png" class="title-img title-d" alt="땅">
+          </div>
+            
         </div>
 
         <div class="title-eng">
