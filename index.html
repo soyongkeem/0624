@@ -35,7 +35,7 @@ p {
 
 
     .logo {
-      height: 24px;
+      height: 30px;
     }
 
     .main {
@@ -287,7 +287,6 @@ p {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  transition: background-image 0.3s ease;
   cursor: pointer;
 }
 
@@ -360,7 +359,6 @@ p {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  transition: background-image 0.3s ease;
   cursor: pointer;
 }
 
@@ -407,17 +405,16 @@ p {
   }
 
   .title-eng img {
-    height: 30px;
+display: none
   }
 
 .preface-section {
-  padding: 0 24px;
+    padding: 0 30px;
     box-sizing: border-box;   /* ✅ 패딩 포함 너비 계산 */
     position: relative;
   }
 
   .preface-inner {
-    
     width: 100%;
     margin: 0 auto;
   }
@@ -439,15 +436,14 @@ p {
 
   .team1-inner,
   .team2-inner {
-    padding: 0 24px;
+    padding: 0 30px;
   }
 .preface-bg {
- width: 110vw;
- left: -10vw; 
+    width: 200vw;     /* ✅ 100vw보다 더 크게 확장 */
     height: auto;
     display: block;
     position: relative;
-    content: url('asset/mobile-prefacebg.png'); /* ✅ 모바일 전용 이미지 경로 */
+    left: -50vw;      /* ✅ 중앙 정렬 효과 (150 - 100) / 2 */
   }
   .team1-row,
   .team2-row {
@@ -455,12 +451,7 @@ p {
     gap: 20px;
   }
 
-  .team1-graphic,
-  .team2-graphic {
-    width: 100%;
-    max-width: 200px;
-    margin: 0 auto;
-  }
+ 
 
   .team-desc,
   .team2-desc {
@@ -631,6 +622,15 @@ p {
       // 벗어나면 복귀
       logo.src = 'asset/logo.png';
       about.style.color = '#0028ff';
+    }
+  });
+
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+    const yellowBg = document.querySelector('.yellow-bg');
+    if (window.innerWidth <= 768) {
+      yellowBg.src = 'asset/mobile-title-yellow-circle.png';
     }
   });
 </script>
